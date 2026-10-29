@@ -119,7 +119,7 @@
     .field{display:flex;flex-direction:column;gap:6px}
     .field.full{grid-column:1/-1}
     .field label{font-size:13px;font-weight:650;color:#343b36}
-    .field input,.field textarea{width:100%;border:1px solid #cbd2cc;border-radius:6px;padding:12px 13px;font:inherit;font-size:15px;color:var(--ink);background:#fff}
+    .field input,.field textarea,.field select{width:100%;border:1px solid #cbd2cc;border-radius:6px;padding:12px 13px;font:inherit;font-size:15px;color:var(--ink);background:#fff}.button:disabled{opacity:.65;cursor:wait;transform:none}
     .field textarea{min-height:112px;resize:vertical}
     .field input:focus-visible,.field textarea:focus-visible{outline:3px solid #b2a46d;outline-offset:2px;border-color:var(--green)}
     .form-note{font-size:12px!important;color:var(--muted);margin-top:0!important}
@@ -212,16 +212,17 @@
       </div>
     </div></section>
     <section class="contact" id="kontakt"><div class="wrap contact-box">
-      <div><div class="eyebrow">Buďte mezi prvními</div><h2>Zajímá vás nabídka Vibrao?</h2><p>Napište nám, kolik desek potřebujete a kam je chcete dodat. Ozveme se s aktuálními informacemi o spuštění nabídky a možnostech spolupráce. E-mail: <a href="mailto:info@vibrao.cz" style="text-decoration:underline;text-underline-offset:3px">info@vibrao.cz</a></p></div>
+      <div><div class="eyebrow">Nezávazná poptávka</div><h2>Zajímá vás nabídka Vibrao?</h2><p>Napište nám počet desek, místo dodání a kontakt. Poptávka se uloží do administrace PLOTAO a ozveme se vám s aktuálními informacemi. Zatím jde o plánovanou nabídku, dostupnost a finální specifikaci předem potvrdíme.</p></div>
       <form class="lead-form" id="leadForm">
-        <div class="field"><label for="leadName">Jméno</label><input id="leadName" name="name" autocomplete="name" required></div>
-        <div class="field"><label for="leadEmail">E-mail</label><input id="leadEmail" name="email" type="email" autocomplete="email" required></div>
-        <div class="field"><label for="leadPhone">Telefon (nepovinný)</label><input id="leadPhone" name="phone" type="tel" autocomplete="tel"></div>
-        <div class="field"><label for="leadQuantity">Přibližný počet desek (nepovinný)</label><input id="leadQuantity" name="quantity" type="number" min="1" inputmode="numeric"></div>
-        <div class="field full"><label for="leadPlace">Obec nebo PSČ dodání (nepovinné)</label><input id="leadPlace" name="place" autocomplete="postal-code"></div>
-        <div class="field full"><label for="leadMessage">Co potřebujete vědět nebo poptat?</label><textarea id="leadMessage" name="message" required></textarea></div>
-        <button class="button" type="submit">Otevřít e‑mail s poptávkou</button>
-        <p class="form-note field full">Formulář nic neodesílá automaticky. Otevře vaši e‑mailovou aplikaci s připravenou zprávou; odeslání dokončíte tam.</p>
+        <div class="field"><label for="leadName">Jméno a příjmení *</label><input id="leadName" name="name" autocomplete="name" maxlength="120" required></div>
+        <div class="field"><label for="leadPhone">Telefon *</label><input id="leadPhone" name="phone" type="tel" autocomplete="tel" required></div>
+        <div class="field"><label for="leadEmail">E-mail (nepovinný)</label><input id="leadEmail" name="email" type="email" autocomplete="email" maxlength="254"></div>
+        <div class="field"><label for="leadPlace">Obec nebo PSČ dodání *</label><input id="leadPlace" name="place" autocomplete="postal-code" maxlength="200" required></div>
+        <div class="field"><label for="leadQuantity">Počet desek (1–400 kusů) *</label><input id="leadQuantity" name="quantity" type="number" min="1" max="400" step="1" inputmode="numeric" required></div>
+        <div class="field full"><label for="leadMessage">Poznámka (nepovinná)</label><textarea id="leadMessage" name="message" maxlength="4000" placeholder="Napište doplňující informace k poptávce."></textarea></div>
+        <button class="button" type="submit">Odeslat nezávaznou poptávku <span aria-hidden="true">→</span></button>
+        <p class="form-note field full">Nejde o závaznou objednávku ani přihlášení k marketingu. Údaje použijeme k vyřízení poptávky a uložíme v administraci PLOTAO. <a href="https://plotao.cz/ochrana-osobnich-udaju.html" target="_blank" rel="noopener">Informace o ochraně osobních údajů</a>.</p>
+        <p class="form-note field full" id="formStatus" role="status" aria-live="polite"></p>
       </form>
     </div></section>
   </main>
@@ -237,23 +238,100 @@
     toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Zavřít menu':'Otevřít menu')});
     nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Otevřít menu')}});
     const leadForm=document.getElementById('leadForm');
-    leadForm.addEventListener('submit',event=>{
+    const formStatus=document.getElementById('formStatus');
+    leadForm.addEventListener('submit',async event=>{
       event.preventDefault();
+      if(!leadForm.reportValidity()) return;
+      const button=leadForm.querySelector('button[type="submit"]');
       const data=new FormData(leadForm);
-      const body=[
-        'Poptávka z Vibrao.cz',
-        '',
-        'Jméno: '+data.get('name'),
-        'E-mail: '+data.get('email'),
-        'Telefon: '+(data.get('phone')||'neuveden'),
-        'Přibližný počet desek: '+(data.get('quantity')||'neuveden'),
-        'Obec / PSČ dodání: '+(data.get('place')||'neuvedeno'),
-        '',
-        'Dotaz / poptávka:',
-        data.get('message')
-      ].join('\n');
-      const subject='Poptávka podhrabových desek Vibrao';
-      window.location.href='mailto:info@vibrao.cz?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+      const quantity=Number(data.get('quantity'));
+      const note=[
+        'Počet podhrabových desek: '+quantity+' ks.',
+        'Plánovaný rozměr jedné desky: 250 × 20 × 5 cm.',
+        data.get('message') ? 'Poznámka zákazníka: '+data.get('message') : ''
+      ].filter(Boolean).join('\n');
+      const lead={
+        schemaVersion:2,
+        mode:'lead',
+        name:String(data.get('name')||'').trim(),
+        phone:String(data.get('phone')||'').trim(),
+        email:String(data.get('email')||'').trim(),
+        place:String(data.get('place')||'').trim(),
+        region:'',
+        note,
+        fenceType:'Podhrabová deska z vibrovaného betonu',
+        height:20,
+        segments:[{name:'Podhrabové desky',length:quantity*2.5,connection:'začátek'}],
+        options:[],
+        gate:false,
+        gateType:'',
+        gateWidth:0,
+        gateDrive:'',
+        gateSection:0,
+        gatePos:0,
+        wicket:false,
+        wicketWidth:0,
+        wicketSection:0,
+        wicketPos:0,
+        scopeValue:'material',
+        scope:'Podhrabové desky',
+        displayedPrice:'',
+        priceKind:'individuální nabídka',
+        priceReason:'',
+        placeFromCalculator:''
+      };
+      const controller=new AbortController();
+      let timeout;
+      button.disabled=true;
+      button.textContent='Odesílám…';
+      formStatus.style.color='';
+      formStatus.textContent='Odesílám poptávku do administrace…';
+      try{
+        const timeoutPromise=new Promise((_,reject)=>{
+          timeout=setTimeout(()=>{controller.abort();reject(new Error('request_timeout'));},15000);
+        });
+        const response=await Promise.race([
+          fetch('https://jmukoccjqykyoqsypuwb.supabase.co/functions/v1/submit-lead',{
+            method:'POST',
+            credentials:'omit',
+            signal:controller.signal,
+            headers:{
+              'Accept':'application/json',
+              'Content-Type':'application/json',
+              'apikey':'sb_publishable_FSrTbgu1LeF9DNeam3ztwA_3dNHGq-V'
+            },
+            body:JSON.stringify({
+              transportVersion:1,
+              source:'vibrao.cz',
+              submittedAt:new Date().toISOString(),
+              lead
+            })
+          }),
+          timeoutPromise
+        ]);
+        let result={};
+        try{result=await response.json();}catch{}
+        if(!response.ok){
+          if(response.status===403) throw new Error('Doména Vibrao není povolená pro odesílání (HTTP 403).');
+          if(response.status>=500) throw new Error('Administrace je momentálně nedostupná (HTTP '+response.status+').');
+          throw new Error('Administrace poptávku odmítla (HTTP '+response.status+'). Zkontrolujte vyplněné údaje.');
+        }
+        formStatus.style.color='#26733b';
+        formStatus.textContent='Děkujeme, poptávka byla úspěšně odeslána. Ozveme se vám na uvedený kontakt.';
+        leadForm.reset();
+      }catch(error){
+        formStatus.style.color='#9a3e24';
+        const detail=(error?.name==='AbortError'||error?.message==='request_timeout')
+          ? 'Čekání na administraci přesáhlo 15 sekund.'
+          : error instanceof TypeError
+            ? 'Spojení s administrací se nezdařilo (síť nebo povolení domény).'
+            : error instanceof Error ? error.message : 'Odeslání se nezdařilo.';
+        formStatus.textContent=detail+' Vyplněná data zůstala zachována; zkuste to znovu nebo napište na info@vibrao.cz.';
+      }finally{
+        clearTimeout(timeout);
+        button.disabled=false;
+        button.innerHTML='Odeslat nezávaznou poptávku <span aria-hidden="true">→</span>';
+      }
     });
     document.getElementById('year').textContent=new Date().getFullYear();
   </script>
