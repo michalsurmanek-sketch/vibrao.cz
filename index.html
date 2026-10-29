@@ -19,9 +19,9 @@
     header{height:82px;background:rgba(255,255,255,.96);border-bottom:1px solid rgba(15,81,56,.08);position:sticky;top:0;z-index:20;backdrop-filter:blur(14px)}
     .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:10px;min-width:190px}
-    .brand svg{width:42px;height:42px;flex:none}
-    .brand-name{font-size:25px;line-height:1;font-weight:850;letter-spacing:-1.1px;color:var(--green)}
-    .brand-caption{font-size:9px;letter-spacing:2.25px;text-transform:uppercase;color:#5d655f;margin-top:5px}
+    .brand svg{width:58px;height:42px;flex:none}
+    .brand-name{display:block;font-size:25px;line-height:1;font-weight:850;letter-spacing:-1.1px;color:var(--green);text-transform:none}
+    .brand-caption{display:block;font-size:9px;letter-spacing:2.25px;text-transform:uppercase;color:#5d655f;margin-top:5px}
     .links{display:flex;align-items:center;gap:31px;color:#343b36;font-size:14px}
     .links a{position:relative;padding:9px 0}
     .links a:after{content:"";position:absolute;left:0;bottom:2px;width:0;height:2px;background:#b2a46d;transition:width .2s}
@@ -102,7 +102,7 @@
     :focus-visible{outline:3px solid #b2a46d;outline-offset:3px}
     @media(max-width:900px){.links{gap:18px}.hero-inner{grid-template-columns:1fr 1fr;gap:20px}.hero-visual{min-height:370px}.benefit{padding-inline:14px}.product-grid{gap:35px}}
     @media(max-width:700px){
-      .wrap{width:min(100% - 36px,540px)}header{height:72px}.brand{min-width:auto}.brand svg{width:38px;height:38px}.brand-name{font-size:23px}
+      .wrap{width:min(100% - 36px,540px)}header{height:72px}.brand{min-width:auto}.brand svg{width:48px;height:36px}.brand-name{font-size:23px}
       .menu-toggle{display:block}.menu-toggle svg{width:25px;height:25px}.nav-cta{display:none}
       .links{display:none;position:absolute;top:71px;left:0;right:0;background:#fff;padding:14px 24px 20px;border-bottom:1px solid var(--line);box-shadow:0 16px 20px rgba(20,40,28,.08);flex-direction:column;align-items:stretch;gap:2px}
       .links.open{display:flex}.links a{padding:12px 0;border-bottom:1px solid #f0f1ed}
@@ -121,8 +121,8 @@
   <header>
     <div class="wrap nav">
       <a class="brand" href="#" aria-label="Vibrao – úvodní stránka">
-        <svg viewBox="0 0 50 50" role="img" aria-label="Logo Vibrao"><g fill="#0f5138"><path d="M8 9 42 5v9L8 18z"/><path d="M8 21 42 17v9L8 30z"/><path d="M8 33 42 29v9L8 42z"/></g><g fill="none" stroke="#0f5138" stroke-width="2" stroke-linecap="round"><path d="M4 18c-3 3-3 9 0 12M46 18c3 3 3 9 0 12"/></g></svg>
-        <span><span class="brand-name">VIBRAO</span><span class="brand-caption">Podhrabové desky</span></span>
+        <svg viewBox="0 0 104 60" role="img" aria-label="Logo Vibrao"><g><path d="M5 11 34 2l27 9-29 10z" fill="#176849"/><path d="m5 11 27 10v7L5 18z" fill="#222825"/><path d="m32 21 29-10v7L32 28z" fill="#aeb5b0"/><path d="m5 25 27 10v7L5 32z" fill="#222825"/><path d="m5 25 29-9 27 9-29 10z" fill="#176849"/><path d="m32 35 29-10v7L32 42z" fill="#aeb5b0"/><path d="m5 39 27 10v7L5 46z" fill="#222825"/><path d="m5 39 29-9 27 9-29 10z" fill="#176849"/><path d="m32 49 29-10v7L32 56z" fill="#aeb5b0"/></g><g fill="none" stroke="#176849" stroke-width="2.4" stroke-linecap="round"><path d="M68 17c5 5 5 17 0 22"/><path d="M75 13c8 7 8 23 0 30"/><path d="M82 9c11 9 11 31 0 38"/></g></svg>
+        <span class="brand-name">Vibrao</span></span>
       </a>
       <nav class="links" id="navLinks" aria-label="Hlavní navigace">
         <a href="#vyroba">Výroba</a><a href="#desky">Podhrabové desky</a><a href="#spoluprace">Pro firmy</a><a href="#dodani">Doprava</a><a href="#kontakt">Kontakt</a>
@@ -177,7 +177,7 @@
   </main>
   <footer><div class="wrap">
     <div class="footer-main">
-      <a class="brand" href="#" aria-label="Vibrao – úvodní stránka"><svg viewBox="0 0 50 50" aria-hidden="true"><g fill="#fff"><path d="M8 9 42 5v9L8 18z"/><path d="M8 21 42 17v9L8 30z"/><path d="M8 33 42 29v9L8 42z"/></g><g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 18c-3 3-3 9 0 12M46 18c3 3 3 9 0 12"/></g></svg><span><span class="brand-name">VIBRAO</span><span class="brand-caption">Podhrabové desky</span></span></a>
+      <a class="brand" href="#" aria-label="Vibrao – úvodní stránka"><svg viewBox="0 0 104 60" aria-hidden="true"><g><path d="M5 11 34 2l27 9-29 10z" fill="#fff"/><path d="m5 11 27 10v7L5 18z" fill="#d9e1db"/><path d="m32 21 29-10v7L32 28z" fill="#aeb5b0"/><path d="m5 25 27 10v7L5 32z" fill="#d9e1db"/><path d="m5 25 29-9 27 9-29 10z" fill="#fff"/><path d="m32 35 29-10v7L32 42z" fill="#aeb5b0"/><path d="m5 39 27 10v7L5 46z" fill="#d9e1db"/><path d="m5 39 29-9 27 9-29 10z" fill="#fff"/><path d="m32 49 29-10v7L32 56z" fill="#aeb5b0"/></g><g fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><path d="M68 17c5 5 5 17 0 22"/><path d="M75 13c8 7 8 23 0 30"/><path d="M82 9c11 9 11 31 0 38"/></g></svg><span><span class="brand-name">Vibrao</span><span class="brand-caption">Podhrabové desky</span></span></a>
       <div class="footer-links"><a href="#vyroba">Výroba</a><a href="#desky">Podhrabové desky</a><a href="#spoluprace">Pro firmy</a><a href="#kontakt">Kontakt</a></div>
     </div>
     <div class="copyright"><span>© <span id="year"></span> Vibrao</span><span>Podhrabové desky z vibrovaného betonu</span></div>
