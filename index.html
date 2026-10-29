@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f5138">
+  <meta name="description" content="Vibrao připravuje podhrabové desky z vibrovaného betonu. Přesné rozměry, odolné provedení a informace o dostupnosti pro zákazníky v celé České republice.">
+  <title>Vibrao | Podhrabové desky z vibrovaného betonu</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <style>
+    :root{--green:#0f5138;--green2:#176849;--ink:#202522;--muted:#68716b;--paper:#f7f6f1;--line:#e6e8e2;--white:#fff;--sand:#ece9df;--shadow:0 22px 55px rgba(22,42,31,.12)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--white);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .wrap{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+    .topline{height:5px;background:var(--green)}
+    header{height:82px;background:rgba(255,255,255,.96);border-bottom:1px solid rgba(15,81,56,.08);position:sticky;top:0;z-index:20;backdrop-filter:blur(14px)}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:190px}
+    .brand svg{width:42px;height:42px;flex:none}
+    .brand-name{font-size:25px;line-height:1;font-weight:850;letter-spacing:-1.1px;color:var(--green)}
+    .brand-caption{font-size:9px;letter-spacing:2.25px;text-transform:uppercase;color:#5d655f;margin-top:5px}
+    .links{display:flex;align-items:center;gap:31px;color:#343b36;font-size:14px}
+    .links a{position:relative;padding:9px 0}
+    .links a:after{content:"";position:absolute;left:0;bottom:2px;width:0;height:2px;background:#b2a46d;transition:width .2s}
+    .links a:hover:after{width:100%}
+    .nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:0;border-radius:7px;background:var(--green);color:#fff;padding:14px 20px;font-weight:650;font-size:14px;cursor:pointer;transition:background .2s,transform .2s}
+    .nav-cta:hover,.button:hover{background:#0b402c;transform:translateY(-1px)}
+    .nav-cta svg,.button svg{width:17px;height:17px}
+    .menu-toggle{display:none;background:none;border:0;color:var(--green);padding:8px}
+    .hero{background:var(--paper);overflow:hidden}
+    .hero-inner{min-height:570px;display:grid;grid-template-columns:.92fr 1.08fr;align-items:center;gap:28px;padding-top:44px;padding-bottom:52px}
+    .eyebrow{color:var(--green);font-weight:750;text-transform:uppercase;letter-spacing:2px;font-size:11px}
+    h1{font-size:clamp(42px,5.2vw,68px);letter-spacing:-3px;line-height:1.02;margin:20px 0 18px;font-weight:820}
+    h1 span{color:var(--green);display:block}
+    .intro{max-width:475px;color:#4f5852;font-size:17px;line-height:1.7;margin:0 0 25px}
+    .hero-actions{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+    .text-link{font-size:14px;font-weight:650;color:var(--green);display:inline-flex;align-items:center;gap:9px}
+    .text-link:hover{text-decoration:underline;text-underline-offset:4px}
+    .availability{display:flex;align-items:center;gap:10px;margin-top:28px;color:#606a63;font-size:12px}
+    .dot{width:8px;height:8px;border-radius:50%;background:#b2a46d;box-shadow:0 0 0 4px rgba(178,164,109,.15)}
+    .hero-visual{position:relative;min-height:422px;border-radius:6px;overflow:hidden;background:linear-gradient(180deg,#dfe7df 0%,#f0eee6 55%,#b5b2a8 100%);box-shadow:var(--shadow)}
+    .hero-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,246,241,.38),transparent 65%),linear-gradient(0deg,rgba(24,32,27,.2),transparent 38%);z-index:1}
+    .yard{position:absolute;inset:0;background:linear-gradient(180deg,#c9d8d2 0 27%,#789481 27% 35%,#c3c0b4 35% 100%)}
+    .yard:before{content:"";position:absolute;top:7%;left:10%;width:82%;height:32%;background:repeating-linear-gradient(0deg,#aeb9ad 0 15px,#d7ddd3 16px 29px);transform:perspective(400px) rotateY(-7deg);opacity:.72}
+    .yard:after{content:"";position:absolute;left:0;right:0;bottom:0;height:28%;background:linear-gradient(170deg,#d1cec4,#a7a499)}
+    .tree{position:absolute;top:9%;width:70px;height:160px;z-index:1}
+    .tree:before{content:"";position:absolute;left:9px;top:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:100px solid #466551}
+    .tree:after{content:"";position:absolute;left:0;top:42px;border-left:39px solid transparent;border-right:39px solid transparent;border-bottom:110px solid #385a46}
+    .tree.t1{right:6%;transform:scale(1.1)}.tree.t2{right:19%;top:13%;transform:scale(.78)}
+    .stack{position:absolute;z-index:3;right:6%;bottom:13%;width:66%;height:43%;filter:drop-shadow(0 15px 12px rgba(22,25,22,.2))}
+    .board{position:absolute;right:0;width:100%;height:23%;border:1px solid rgba(81,82,76,.2);background:linear-gradient(180deg,#e0dfd9,#c5c4bd 55%,#aead a7);box-shadow:inset 0 2px 4px rgba(255,255,255,.55),0 5px 7px rgba(36,38,34,.18);clip-path:polygon(0 0,91% 0,100% 16%,100% 100%,8% 100%,0 84%)}
+    .board:nth-child(1){bottom:0;width:100%}.board:nth-child(2){bottom:24%;width:95%;right:2%}.board:nth-child(3){bottom:48%;width:90%;right:4%}.board:nth-child(4){bottom:72%;width:85%;right:6%}
+    .stack:after{content:"";position:absolute;bottom:13%;left:16%;width:8%;height:14%;background:#89724e;box-shadow:245px 0 #89724e}
+    .visual-label{position:absolute;z-index:4;left:25px;bottom:22px;color:#fff;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-shadow:0 1px 4px #444}
+    .visual-mark{position:absolute;z-index:4;left:24px;top:24px;background:rgba(255,255,255,.87);padding:8px 12px;border-radius:4px;color:var(--green);font-size:10px;font-weight:750;letter-spacing:1.5px}
+    .benefits{background:#fff;border-bottom:1px solid var(--line)}
+    .benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:28px 0}
+    .benefit{display:flex;align-items:center;gap:15px;padding:2px 26px;border-right:1px solid var(--line)}
+    .benefit:first-child{padding-left:5px}.benefit:last-child{border-right:0}
+    .benefit-icon{width:45px;height:45px;border:1.5px solid #b4c5bb;border-radius:50%;display:grid;place-items:center;color:var(--green);flex:none}
+    .benefit-icon svg{width:22px;height:22px}
+    .benefit strong{display:block;font-size:14px;margin-bottom:2px}
+    .benefit span{display:block;color:var(--muted);font-size:12px}
+    section{padding:92px 0}
+    .section-head{max-width:620px;margin-bottom:38px}
+    .section-head h2{font-size:clamp(30px,4vw,44px);letter-spacing:-1.6px;line-height:1.1;margin:12px 0}
+    .section-head p{color:var(--muted);font-size:15px;margin:0}
+    .product-grid{display:grid;grid-template-columns:1.07fr .93fr;gap:55px;align-items:center}
+    .product-art{height:355px;border-radius:8px;background:linear-gradient(130deg,#efeee8,#deddd6);position:relative;overflow:hidden}
+    .product-art:before{content:"";position:absolute;inset:0;background:linear-gradient(155deg,transparent 52%,rgba(94,93,83,.12) 52.2%,transparent 52.7%)}
+    .sample-board{position:absolute;left:11%;right:10%;height:72px;background:linear-gradient(180deg,#dbdad4,#bdbcb5 60%,#a6a59f);border:1px solid #aaa9a1;border-radius:3px;box-shadow:0 12px 19px rgba(43,43,38,.16);transform:skewY(-8deg)}
+    .sample-board:after{content:"";position:absolute;inset:8px 12px;border-top:1px solid rgba(255,255,255,.45);border-bottom:1px solid rgba(75,74,68,.08)}
+    .sample-board.a{top:29%;transform:skewY(-8deg)}.sample-board.b{top:47%;transform:skewY(-8deg);left:17%;right:5%}.sample-board.c{top:65%;transform:skewY(-8deg);left:8%;right:14%}
+    .art-tag{position:absolute;left:22px;bottom:20px;background:#fff;padding:9px 13px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--green)}
+    .details h3{font-size:24px;letter-spacing:-.6px;margin:0 0 13px}
+    .details>p{color:var(--muted);font-size:15px;margin:0 0 23px}
+    .specs{border-top:1px solid var(--line)}
+    .spec{display:flex;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-size:13px}
+    .spec span{color:var(--muted)}.spec strong{font-weight:650}
+    .note{font-size:12px;color:#78817b;margin-top:16px}
+    .dark-band{background:#123c2d;color:#fff}
+    .dark-band .section-head{margin-bottom:0}
+    .dark-band .eyebrow{color:#c5bd91}
+    .dark-band .section-head p{color:#d5ddd7}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+    .step{border:1px solid rgba(255,255,255,.17);border-radius:7px;padding:25px;background:rgba(255,255,255,.035)}
+    .step-num{font-size:11px;color:#c5bd91;letter-spacing:1.5px;font-weight:750}
+    .step h3{font-size:18px;margin:12px 0 7px}
+    .step p{color:#cbd6cf;font-size:13px;margin:0}
+    .contact{background:var(--paper)}
+    .contact-box{display:grid;grid-template-columns:1fr auto;align-items:center;gap:28px;background:#fff;padding:38px 42px;border:1px solid var(--line);border-radius:8px;box-shadow:0 10px 30px rgba(22,42,31,.05)}
+    .contact-box h2{font-size:32px;letter-spacing:-1.2px;margin:8px 0}
+    .contact-box p{color:var(--muted);margin:0;max-width:630px;font-size:14px}
+    footer{background:#14241c;color:#e9eee9;padding:37px 0 25px}
+    .footer-main{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
+    .footer-main .brand-name{color:#fff}.footer-main .brand-caption{color:#bec9c0}
+    .footer-links{display:flex;gap:22px;font-size:12px;color:#d1d9d3}
+    .copyright{display:flex;justify-content:space-between;gap:15px;padding-top:18px;color:#aab5ad;font-size:11px}
+    :focus-visible{outline:3px solid #b2a46d;outline-offset:3px}
+    @media(max-width:900px){.links{gap:18px}.hero-inner{grid-template-columns:1fr 1fr;gap:20px}.hero-visual{min-height:370px}.benefit{padding-inline:14px}.product-grid{gap:35px}}
+    @media(max-width:700px){
+      .wrap{width:min(100% - 36px,540px)}header{height:72px}.brand{min-width:auto}.brand svg{width:38px;height:38px}.brand-name{font-size:23px}
+      .menu-toggle{display:block}.menu-toggle svg{width:25px;height:25px}.nav-cta{display:none}
+      .links{display:none;position:absolute;top:71px;left:0;right:0;background:#fff;padding:14px 24px 20px;border-bottom:1px solid var(--line);box-shadow:0 16px 20px rgba(20,40,28,.08);flex-direction:column;align-items:stretch;gap:2px}
+      .links.open{display:flex}.links a{padding:12px 0;border-bottom:1px solid #f0f1ed}
+      .hero-inner{display:flex;flex-direction:column;align-items:stretch;padding-top:42px;padding-bottom:30px;gap:30px}
+      h1{font-size:46px;letter-spacing:-2.2px;margin:15px 0}.intro{font-size:15px}.hero-visual{min-height:300px}
+      .benefit-grid{grid-template-columns:1fr;padding:10px 0}.benefit,.benefit:first-child{padding:14px 4px;border-right:0;border-bottom:1px solid var(--line)}.benefit:last-child{border-bottom:0}
+      section{padding:68px 0}.product-grid{grid-template-columns:1fr;gap:28px}.product-art{height:290px}
+      .steps{grid-template-columns:1fr;gap:12px}.step{padding:20px}.contact-box{grid-template-columns:1fr;padding:27px 24px}.contact-box h2{font-size:28px}
+      .footer-main{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap;gap:14px}.copyright{flex-direction:column;gap:5px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="Vibrao – úvodní stránka">
+        <svg viewBox="0 0 50 50" role="img" aria-label="Logo Vibrao"><g fill="#0f5138"><path d="M8 9 42 5v9L8 18z"/><path d="M8 21 42 17v9L8 30z"/><path d="M8 33 42 29v9L8 42z"/></g><g fill="none" stroke="#0f5138" stroke-width="2" stroke-linecap="round"><path d="M4 18c-3 3-3 9 0 12M46 18c3 3 3 9 0 12"/></g></svg>
+        <span><span class="brand-name">VIBRAO</span><span class="brand-caption">Podhrabové desky</span></span>
+      </a>
+      <nav class="links" id="navLinks" aria-label="Hlavní navigace">
+        <a href="#vyroba">Výroba</a><a href="#desky">Podhrabové desky</a><a href="#spoluprace">Pro firmy</a><a href="#dodani">Doprava</a><a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="nav-cta" href="#kontakt">Poptat výrobu <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Otevřít menu" aria-expanded="false" aria-controls="navLinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div>
+          <div class="eyebrow">Podhrabové desky z vibrovaného betonu</div>
+          <h1>Pevný základ<span>každého plotu.</span></h1>
+          <p class="intro">Připravujeme nabídku betonových podhrabových desek pro zákazníky, montážní firmy i prodejce. Přesné rozměry, poctivé provedení a informace o dostupnosti na jednom místě.</p>
+          <div class="hero-actions"><a class="button" href="#kontakt">Chci informace <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="text-link" href="#desky">Prohlédnout nabídku <span aria-hidden="true">↓</span></a></div>
+          <div class="availability"><span class="dot"></span><span>Připravujeme spuštění výroby a dodávek</span></div>
+        </div>
+        <div class="hero-visual" role="img" aria-label="Ilustrační zobrazení betonových podhrabových desek ve výrobním areálu">
+          <div class="yard"></div><div class="tree t1"></div><div class="tree t2"></div>
+          <div class="stack"><i class="board"></i><i class="board"></i><i class="board"></i><i class="board"></i></div>
+          <div class="visual-mark">Vibrao · betonové prvky</div><div class="visual-label">Přesné rozměry · spolehlivé dodání</div>
+        </div>
+      </div>
+    </section>
+    <div class="benefits" id="vyroba"><div class="wrap benefit-grid">
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 20V9l5 3V8l5 3V4h6v16H3Z"/><path d="M7 16h2m3 0h2m3 0h2"/></svg></div><div><strong>Vibrovaný beton</strong><span>Hutné a odolné provedení</span></div></div>
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 20 6v5c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.3 2.3 4.8-5"/></svg></div><div><strong>Jasné parametry</strong><span>Rozměry a varianty přehledně</span></div></div>
+      <div class="benefit"><div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 7h11v11H3zM14 11h4l3 3v4h-7z"/><circle cx="7.5" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg></div><div><strong>Dodání po ČR</strong><span>Možnosti dopravy podle místa</span></div></div>
+    </div></div>
+    <section id="desky"><div class="wrap product-grid">
+      <div class="product-art" role="img" aria-label="Ilustrační betonové podhrabové desky"><div class="sample-board a"></div><div class="sample-board b"></div><div class="sample-board c"></div><div class="art-tag">Betonové podhrabové desky</div></div>
+      <div class="details">
+        <div class="section-head"><div class="eyebrow">Nabídka Vibrao</div><h2>Desky, které drží linii.</h2><p>Podhrabová deska pomáhá chránit spodní část plotu, oddělit pozemek a vytvořit čisté zakončení oplocení. Připravujeme základní varianty pro běžné plotové systémy.</p></div>
+        <h3>Plánovaná standardní varianta</h3>
+        <div class="specs"><div class="spec"><span>Délka</span><strong>250 cm</strong></div><div class="spec"><span>Výška</span><strong>20 cm</strong></div><div class="spec"><span>Tloušťka</span><strong>5 cm</strong></div><div class="spec"><span>Materiál</span><strong>Vibrovaný beton</strong></div></div>
+        <p class="note">Uvedené parametry jsou plánovanou variantou. Dostupnost a finální specifikaci potvrdíme před zahájením prodeje.</p>
+      </div>
+    </div></section>
+    <section class="dark-band" id="spoluprace"><div class="wrap">
+      <div class="section-head"><div class="eyebrow">Pro montážní firmy a prodejce</div><h2>Plánujete odběr pro svůj projekt?</h2><p>Dejte nám vědět, jaké rozměry, množství a místo dodání potřebujete. Připravíme informace o možnostech spolupráce, jakmile bude nabídka spuštěná.</p></div>
+      <div class="steps" id="dodani">
+        <article class="step"><div class="step-num">01 / POPTÁVKA</div><h3>Pošlete základní údaje</h3><p>Uveďte počet kusů, termín a obec, kam mají desky směřovat.</p></article>
+        <article class="step"><div class="step-num">02 / UPŘESNĚNÍ</div><h3>Doladíme parametry</h3><p>Probereme typ plotu, požadované rozměry i způsob převzetí.</p></article>
+        <article class="step"><div class="step-num">03 / DODÁNÍ</div><h3>Domluvíme další postup</h3><p>Jakmile bude výroba spuštěna, potvrdíme cenu, termín a dopravu.</p></article>
+      </div>
+    </div></section>
+    <section class="contact" id="kontakt"><div class="wrap contact-box">
+      <div><div class="eyebrow">Buďte mezi prvními</div><h2>Zajímá vás nabídka Vibrao?</h2><p>Napište nám, kolik desek potřebujete a kam je chcete dodat. Ozveme se s aktuálními informacemi o spuštění nabídky a možnostech spolupráce.</p></div>
+      <a class="button" href="mailto:info@vibrao.cz?subject=Popt%C3%A1vka%20podhrabov%C3%BDch%20desek%20Vibrao">Napsat poptávku <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m3 5 7 6 7-6M4 5h12v10H4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div></section>
+  </main>
+  <footer><div class="wrap">
+    <div class="footer-main">
+      <a class="brand" href="#" aria-label="Vibrao – úvodní stránka"><svg viewBox="0 0 50 50" aria-hidden="true"><g fill="#fff"><path d="M8 9 42 5v9L8 18z"/><path d="M8 21 42 17v9L8 30z"/><path d="M8 33 42 29v9L8 42z"/></g><g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M4 18c-3 3-3 9 0 12M46 18c3 3 3 9 0 12"/></g></svg><span><span class="brand-name">VIBRAO</span><span class="brand-caption">Podhrabové desky</span></span></a>
+      <div class="footer-links"><a href="#vyroba">Výroba</a><a href="#desky">Podhrabové desky</a><a href="#spoluprace">Pro firmy</a><a href="#kontakt">Kontakt</a></div>
+    </div>
+    <div class="copyright"><span>© <span id="year"></span> Vibrao</span><span>Podhrabové desky z vibrovaného betonu</span></div>
+  </div></footer>
+  <script>
+    const toggle=document.getElementById('menuToggle'),nav=document.getElementById('navLinks');
+    toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Zavřít menu':'Otevřít menu')});
+    nav.addEventListener('click',e=>{if(e.target.closest('a')){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Otevřít menu')}});
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
