@@ -141,8 +141,9 @@
     .faq-item h3{font-size:17px;line-height:1.35;margin:0 0 7px}
     .faq-item p{font-size:14px;color:var(--muted);margin:0}
     footer{background:var(--paper);color:var(--ink);padding:0}
-    .footer-main{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:32px 0;border-bottom:1px solid var(--line)}
+    .footer-main{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:12px;padding:32px 0;border-bottom:1px solid var(--line)}
     .footer-main .brand{background:transparent;padding:0;align-items:flex-start}.footer-main .brand img{background:var(--paper);padding:4px 8px;border-radius:3px}
+    .footer-email{color:var(--green);font-size:14px;font-weight:600}
     .footer-links{display:flex;gap:22px;font-size:12px;color:#d1d9d3}
     .footer-bottom{background:#14241c;color:#e9eee9}.copyright{display:flex;justify-content:space-between;gap:15px;padding:14px 0;color:#e9eee9;font-size:11px}
     :focus:not(:focus-visible){outline:none}:focus-visible{outline:3px solid #b2a46d;outline-offset:3px}
@@ -157,7 +158,7 @@
       .benefit-grid{grid-template-columns:1fr;padding:10px 0}.benefit,.benefit:first-child{padding:14px 4px;border-right:0;border-bottom:1px solid var(--line)}.benefit:last-child{border-bottom:0}
       section{padding:68px 0}.product-grid{grid-template-columns:1fr;gap:28px}.product-art{height:290px;order:2}.details{order:1}
       .steps{grid-template-columns:1fr;gap:12px}.step{padding:20px}.contact-box{grid-template-columns:1fr;padding:27px 24px}.contact-box h2{font-size:28px}.lead-form{grid-template-columns:1fr}.field.full{grid-column:auto}
-      .contact{padding-bottom:24px}.footer-main{padding-top:18px;align-items:flex-start;flex-direction:column;gap:20px}.footer-links{width:100%;flex-wrap:nowrap;justify-content:space-between;gap:10px;font-size:11px}.footer-links a{white-space:nowrap}.copyright{flex-direction:row;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;font-size:10px}.copyright>span{white-space:nowrap}
+      .contact{padding-bottom:24px}.footer-main{padding-top:18px;align-items:flex-start;flex-direction:column;gap:12px}.footer-links{width:100%;flex-wrap:nowrap;justify-content:space-between;gap:10px;font-size:11px}.footer-links a{white-space:nowrap}.copyright{flex-direction:row;align-items:center;justify-content:space-between;gap:8px;flex-wrap:nowrap;font-size:10px}.copyright>span{white-space:nowrap}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
@@ -207,6 +208,7 @@ body.launch-modal-open{overflow:hidden}
   <header>
     <div class="wrap nav">
       <a class="brand" href="#" aria-label="Vibrao – úvodní stránka"><img src="/assets/vibrao-logo.png" alt="Vibrao"></a>
+      <a class="footer-email" href="mailto:info@vibrao.cz">info@vibrao.cz</a>
       <nav class="links" id="navLinks" aria-label="Hlavní navigace">
         <a href="#vyroba">Výroba</a><a href="#desky">Podhrabové desky</a><a href="#spoluprace">Pro firmy</a><a href="#dodani">Doprava</a><a href="#faq">Časté dotazy</a><a href="#kontakt">Kontakt</a>
       </nav>
