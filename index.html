@@ -74,7 +74,7 @@
     .text-link:hover{text-decoration:underline;text-underline-offset:4px}
     .availability{display:flex;align-items:center;gap:10px;margin-top:28px;color:#606a63;font-size:12px}
     .dot{width:8px;height:8px;border-radius:50%;background:#b2a46d;box-shadow:0 0 0 4px rgba(178,164,109,.15)}
-    .hero-visual{position:relative;min-height:422px;border-radius:6px;overflow:hidden;background:linear-gradient(180deg,#dfe7df 0%,#f0eee6 55%,#b5b2a8 100%);box-shadow:var(--shadow)}
+    .hero-visual{position:relative;min-height:422px;border-radius:6px;overflow:hidden;background:#e8ece6;box-shadow:var(--shadow)}.hero-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
     .hero-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(247,246,241,.38),transparent 65%),linear-gradient(0deg,rgba(24,32,27,.2),transparent 38%);z-index:1}
     .yard{position:absolute;inset:0;background:linear-gradient(180deg,#c9d8d2 0 27%,#789481 27% 35%,#c3c0b4 35% 100%)}
     .yard:before{content:"";position:absolute;top:7%;left:10%;width:82%;height:32%;background:repeating-linear-gradient(0deg,#aeb9ad 0 15px,#d7ddd3 16px 29px);transform:perspective(400px) rotateY(-7deg);opacity:.72}
@@ -225,11 +225,7 @@ body.launch-modal-open{overflow:hidden}
           <div class="hero-actions"><a class="button" href="#kontakt">Chci informace <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="text-link" href="#desky">Prohlédnout nabídku <span aria-hidden="true">↓</span></a></div>
           <div class="availability"><span class="dot"></span><span>Připravujeme spuštění výroby a dodávek</span></div>
         </div>
-        <div class="hero-visual" role="img" aria-label="Ilustrační zobrazení betonových podhrabových desek ve výrobním areálu">
-          <div class="yard"></div><div class="tree t1"></div><div class="tree t2"></div>
-          <div class="stack"><i class="board"></i><i class="board"></i><i class="board"></i><i class="board"></i></div>
-          <div class="visual-mark">Vibrao · betonové prvky</div><div class="visual-label">Přesné rozměry · spolehlivé dodání</div>
-        </div>
+        <div class="hero-visual"><img src="/assets/vibrao-hero.jpg" alt="Zelené plotové pletivo s rovnými betonovými podhrabovými deskami"></div>
       </div>
     </section>
     <div class="benefits" id="vyroba"><div class="wrap benefit-grid">
