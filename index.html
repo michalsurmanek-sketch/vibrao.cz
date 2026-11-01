@@ -134,7 +134,7 @@
     .field input,.field textarea,.field select{width:100%;border:1px solid #cbd2cc;border-radius:6px;padding:12px 13px;font:inherit;font-size:15px;color:var(--ink);background:#fff}.button:disabled{opacity:.65;cursor:wait;transform:none}
     .field textarea{min-height:112px;resize:vertical}
     .field input:focus-visible,.field textarea:focus-visible{outline:3px solid #b2a46d;outline-offset:2px;border-color:var(--green)}
-    .form-note{font-size:12px!important;color:var(--muted);margin-top:0!important}
+    .form-note{font-size:12px!important;color:var(--muted);margin-top:0!important}#formStatus:empty{display:none}
     .lead-form .button{justify-self:start}
     .faq-list{display:grid;gap:12px;max-width:900px}
     .faq-item{border:1px solid var(--line);border-radius:7px;padding:20px 22px;background:#fff}
@@ -272,7 +272,7 @@ body.launch-modal-open{overflow:hidden}
         <div class="field"><label for="leadPlace">Obec nebo PSČ dodání *</label><input id="leadPlace" name="place" autocomplete="postal-code" maxlength="200" required></div>
         <div class="field"><label for="leadQuantity">Počet desek (1–400 kusů) *</label><input id="leadQuantity" name="quantity" type="number" min="1" max="400" step="1" inputmode="numeric" required></div>
         <div class="field full"><label for="leadMessage">Poznámka (nepovinná)</label><textarea id="leadMessage" name="message" maxlength="4000" placeholder="Napište doplňující informace k poptávce."></textarea></div>
-        <p class="form-note field full">Nejde o závaznou objednávku ani přihlášení k marketingu. Údaje použijeme k vyřízení poptávky a uložíme v administraci PLOTAO. <a href="https://plotao.cz/ochrana-osobnich-udaju.html" target="_blank" rel="noopener">Informace o ochraně osobních údajů</a>.</p>
+        <p class="form-note field full">Nejde o závaznou objednávku ani přihlášení k marketingu. Údaje použijeme k vyřízení poptávky a uložíme v administraci PLOTAO. <a href="https://plotao.cz/ochrana-osobnich-udaju.html" target="_blank" rel="noopener">Informace o ochraně osobních údajů</a></p>
         <p class="form-note field full" id="formStatus" role="status" aria-live="polite"></p>
         <button class="button" type="submit">Odeslat nezávaznou poptávku <span aria-hidden="true">→</span></button>
       </form>
