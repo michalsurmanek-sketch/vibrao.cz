@@ -52,7 +52,7 @@
     header{height:82px;background:rgba(255,255,255,.96);border-bottom:1px solid rgba(15,81,56,.08);position:sticky;top:0;z-index:20;backdrop-filter:blur(14px)}
     .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;align-items:center;gap:10px;min-width:190px}
-    .brand img{width:170px;height:50px;object-fit:contain;display:block;flex:none}.nav>.brand{flex-direction:column;align-items:flex-start;gap:3px}.header-tagline{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#68716b;line-height:1}
+    .brand img{width:170px;height:50px;object-fit:contain;display:block;flex:none}.nav>.brand{align-items:flex-start}.header-tagline{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#68716b;line-height:1}
     .brand-name{display:block;font-size:25px;line-height:1;font-weight:850;letter-spacing:-1.1px;color:var(--green);text-transform:none}
     .brand-caption{display:block;font-size:9px;letter-spacing:2.25px;text-transform:uppercase;color:#5d655f;margin-top:5px}
     .links{display:flex;align-items:center;gap:31px;color:#343b36;font-size:14px}
@@ -142,7 +142,7 @@
     .faq-item p{font-size:14px;color:var(--muted);margin:0}
     footer{background:#14241c;color:#e9eee9;padding:37px 0 25px}
     .footer-main{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
-    .footer-main .brand{background:transparent;padding:0;flex-direction:column;align-items:flex-start;gap:8px}.footer-main .brand img{background:var(--paper);padding:4px 8px;border-radius:3px}.footer-tagline{font-size:11px;letter-spacing:1.15px;text-transform:uppercase;color:#bec9c0;line-height:1.4}
+    .footer-main .brand{background:transparent;padding:0;align-items:flex-start}.footer-main .brand img{background:var(--paper);padding:4px 8px;border-radius:3px}
     .footer-links{display:flex;gap:22px;font-size:12px;color:#d1d9d3}
     .copyright{display:flex;justify-content:space-between;gap:15px;padding-top:18px;color:#aab5ad;font-size:11px}
     :focus:not(:focus-visible){outline:none}:focus-visible{outline:3px solid #b2a46d;outline-offset:3px}
@@ -206,7 +206,7 @@ body.launch-modal-open{overflow:hidden}
   <div class="topline"></div>
   <header>
     <div class="wrap nav">
-      <a class="brand" href="#" aria-label="Vibrao – úvodní stránka"><img src="/assets/vibrao-logo.png" alt="Vibrao"><span class="header-tagline">Výroba podhrabových desek</span></a>
+      <a class="brand" href="#" aria-label="Vibrao – úvodní stránka"><img src="/assets/vibrao-logo.png" alt="Vibrao"></a>
       <nav class="links" id="navLinks" aria-label="Hlavní navigace">
         <a href="#vyroba">Výroba</a><a href="#desky">Podhrabové desky</a><a href="#spoluprace">Pro firmy</a><a href="#dodani">Doprava</a><a href="#faq">Časté dotazy</a><a href="#kontakt">Kontakt</a>
       </nav>
@@ -218,7 +218,6 @@ body.launch-modal-open{overflow:hidden}
     <section class="hero">
       <div class="wrap hero-inner">
         <div>
-          <div class="eyebrow">Podhrabové desky z vibrovaného betonu</div>
           <h1>Podhrabové desky<span>z vibrovaného betonu.</span></h1>
           <p class="hero-slogan" style="font-size:21px;font-weight:700;line-height:1.25;margin:0 0 14px;color:var(--green)">Pevný základ každého plotu.</p>
           <p class="intro">Připravujeme nabídku betonových podhrabových desek pro zákazníky, montážní firmy i prodejce. Přesné rozměry, poctivé provedení a informace o dostupnosti na jednom místě.</p>
@@ -280,7 +279,7 @@ body.launch-modal-open{overflow:hidden}
   </main>
   <footer><div class="wrap">
     <div class="footer-main">
-      <a class="brand" href="#" aria-label="Vibrao – úvodní stránka"><img src="/assets/vibrao-logo.png" alt="Vibrao"><span class="footer-tagline">Výroba podhrabových desek</span></a>
+      <a class="brand" href="#" aria-label="Vibrao – úvodní stránka"><img src="/assets/vibrao-logo.png" alt="Vibrao"></a>
       <div class="footer-links"><a href="#spoluprace">Pro firmy</a><a href="#faq">Časté dotazy</a><a href="#kontakt">Kontakt</a></div>
     </div>
     <div class="copyright"><span>© <span id="year"></span> Vibrao</span><span>Podhrabové desky z vibrovaného betonu</span></div>
