@@ -1,0 +1,4 @@
+Contact: mailto:info@vibrao.cz
+Preferred-Languages: cs, en
+Canonical: https://vibrao.cz/.well-known/security.txt
+Expires: 2027-11-01T23:59:59Z
