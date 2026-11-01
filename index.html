@@ -108,6 +108,7 @@
     .sample-board:after{content:"";position:absolute;inset:8px 12px;border-top:1px solid rgba(255,255,255,.45);border-bottom:1px solid rgba(75,74,68,.08)}
     .sample-board.a{top:29%;transform:skewY(-8deg)}.sample-board.b{top:47%;transform:skewY(-8deg);left:17%;right:5%}.sample-board.c{top:65%;transform:skewY(-8deg);left:8%;right:14%}
     .art-tag{position:absolute;left:22px;bottom:20px;background:#fff;padding:9px 13px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--green)}
+    .mobile-art-tag{display:none}
     .details h3{font-size:24px;letter-spacing:-.6px;margin:0 0 13px}
     .details>p{color:var(--muted);font-size:15px;margin:0 0 23px}
     .specs{border-top:1px solid var(--line)}
@@ -155,7 +156,7 @@
       .hero-inner{min-height:0;display:flex;flex-direction:column;align-items:stretch;padding-top:12px;padding-bottom:26px;gap:22px}
       h1{font-size:40px;letter-spacing:-1.8px;line-height:1.05;margin:15px 0}.intro{font-size:15px}.hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%}.hero-actions>.button,.hero-actions>.text-link{min-width:0;width:100%;min-height:50px;padding:10px 5px;font-size:clamp(11px,3.5vw,13px);line-height:1.2;gap:4px;justify-content:center;text-align:center}.hero-actions>.text-link{border:1px solid rgba(15,81,56,.28);border-radius:7px;text-decoration:none}.hero-visual{min-height:300px}
       .benefit-grid{grid-template-columns:1fr;padding:10px 0}.benefit,.benefit:first-child{padding:14px 4px;border-right:0;border-bottom:1px solid var(--line)}.benefit:last-child{border-bottom:0}
-      section{padding:68px 0}.product-grid{grid-template-columns:1fr;gap:28px}.product-art{height:290px}
+      section{padding:68px 0}.product-grid{grid-template-columns:1fr;gap:28px}.product-art{height:290px}.product-art>.art-tag{display:none}.mobile-art-tag{display:inline-flex;align-items:center;margin-top:10px;padding:8px 12px;border-radius:999px;background:#eef3ee;color:var(--green);font-size:11px;font-weight:700;letter-spacing:.3px}
       .steps{grid-template-columns:1fr;gap:12px}.step{padding:20px}.contact-box{grid-template-columns:1fr;padding:27px 24px}.contact-box h2{font-size:28px}.lead-form{grid-template-columns:1fr}.field.full{grid-column:auto}
       .footer-main{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap;gap:14px}.copyright{flex-direction:column;gap:5px}
     }
@@ -240,7 +241,7 @@ body.launch-modal-open{overflow:hidden}
     <section id="desky"><div class="wrap product-grid">
       <div class="product-art" role="img" aria-label="Ilustrační betonové podhrabové desky"><div class="sample-board a"></div><div class="sample-board b"></div><div class="sample-board c"></div><div class="art-tag">Betonové podhrabové desky</div></div>
       <div class="details">
-        <div class="section-head"><div class="eyebrow">Nabídka Vibrao</div><h2>Desky, které drží linii.</h2><p>Podhrabová deska pomáhá chránit spodní část plotu, oddělit pozemek a vytvořit čisté zakončení oplocení. Připravujeme základní varianty pro běžné plotové systémy.</p></div>
+        <div class="section-head"><div class="eyebrow">Nabídka Vibrao</div><span class="mobile-art-tag">Betonové podhrabové desky</span><h2>Desky, které drží linii.</h2><p>Podhrabová deska pomáhá chránit spodní část plotu, oddělit pozemek a vytvořit čisté zakončení oplocení. Připravujeme základní varianty pro běžné plotové systémy.</p></div>
         <h3>Plánovaná standardní varianta</h3>
         <div class="specs"><div class="spec"><span>Délka</span><strong>250 cm</strong></div><div class="spec"><span>Výška</span><strong>20 cm</strong></div><div class="spec"><span>Tloušťka</span><strong>5 cm</strong></div><div class="spec"><span>Materiál</span><strong>Vibrovaný beton</strong></div></div>
         <p class="note">Uvedené parametry jsou plánovanou variantou. Dostupnost a finální specifikaci potvrdíme před zahájením prodeje.</p>
