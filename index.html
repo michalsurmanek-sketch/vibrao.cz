@@ -140,11 +140,11 @@
     .faq-item{border:1px solid var(--line);border-radius:7px;padding:20px 22px;background:#fff}
     .faq-item h3{font-size:17px;line-height:1.35;margin:0 0 7px}
     .faq-item p{font-size:14px;color:var(--muted);margin:0}
-    footer{background:#14241c;color:#e9eee9;padding:37px 0 25px}
-    .footer-main{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.12)}
+    footer{background:var(--paper);color:var(--ink);padding:0}
+    .footer-main{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:32px 0;border-bottom:1px solid var(--line)}
     .footer-main .brand{background:transparent;padding:0;align-items:flex-start}.footer-main .brand img{background:var(--paper);padding:4px 8px;border-radius:3px}
     .footer-links{display:flex;gap:22px;font-size:12px;color:#d1d9d3}
-    .copyright{display:flex;justify-content:space-between;gap:15px;padding-top:18px;color:#aab5ad;font-size:11px}
+    .footer-bottom{background:#14241c;color:#e9eee9}.copyright{display:flex;justify-content:space-between;gap:15px;padding:14px 0;color:#e9eee9;font-size:11px}
     :focus:not(:focus-visible){outline:none}:focus-visible{outline:3px solid #b2a46d;outline-offset:3px}
     @media(max-width:900px){.links{gap:18px}.hero-inner{grid-template-columns:1fr 1fr;gap:20px}.hero-visual{min-height:370px}.benefit{padding-inline:14px}.product-grid{gap:35px}}
     @media(max-width:700px){
@@ -280,10 +280,9 @@ body.launch-modal-open{overflow:hidden}
   <footer><div class="wrap">
     <div class="footer-main">
       <a class="brand" href="#" aria-label="Vibrao – úvodní stránka"><img src="/assets/vibrao-logo.png" alt="Vibrao"></a>
-      
     </div>
-    <div class="copyright"><span>© <span id="year"></span> Vibrao</span><span>Podhrabové desky z vibrovaného betonu</span></div>
-  </div></footer>
+  </div>
+  <div class="footer-bottom"><div class="wrap copyright"><span>© <span id="year"></span> Vibrao</span><span>Podhrabové desky z vibrovaného betonu</span></div></div></footer>
   <script>
     const toggle=document.getElementById('menuToggle'),nav=document.getElementById('navLinks');
     toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Zavřít menu':'Otevřít menu')});
